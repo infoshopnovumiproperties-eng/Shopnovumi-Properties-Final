@@ -1,0 +1,14 @@
+এই ZIP-এ package-lock.json এবং node_modules রাখা হয়নি।
+কারণ package-lock.json থাকলে পুরোনো/internal registry link ধরে npm error দিতে পারে।
+
+VS Code এ চালানোর নিয়ম:
+1) আগে পুরোনো folder delete করুন।
+2) এই ZIP unzip করুন।
+3) ভিতরের shopnovumi-properties folder VS Code-এ Open Folder করুন।
+4) Terminal খুলে দিন:
+   npm install
+5) তারপর দিন:
+   npm run dev
+
+যদি আপনার VS Code-এ package-lock.json দেখা যায়, বুঝবেন আপনি পুরোনো folder open করেছেন।
+এই নতুন ZIP-এ package-lock.json নেই।
