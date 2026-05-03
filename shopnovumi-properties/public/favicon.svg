@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="64" cy="64" r="61" />
+    </clipPath>
+  </defs>
+  <circle cx="64" cy="64" r="63" fill="#ffffff" />
+  <circle cx="64" cy="64" r="63" fill="none" stroke="#047857" stroke-width="4" />
+  <image href="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" x="8" y="8" width="112" height="112" preserveAspectRatio="xMidYMid meet" clip-path="url(#circleClip)" />
+</svg>
