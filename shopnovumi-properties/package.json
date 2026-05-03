@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "node -e \"const fs=require('fs');const p='src/main.jsx';let s=fs.readFileSync(p,'utf8');s=s.replace('down=100000*size','down=200000*size');s=s.replace(\"'ডাউন পেমেন্ট: কাঠা প্রতি '+money(100000)\",\"'ডাউন পেমেন্ট: কাঠা প্রতি '+money(200000)\");const a=s.indexOf('function BayIconCalculator()');const b=s.indexOf('function WesternPriceTable()',a);if(a>-1&&b>-1){s=s.slice(0,a)+'function BayIconCalculator(){return null;}\\n\\n'+s.slice(b);}fs.writeFileSync(p,s);\" && vite build",
+    "build": "vite build",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
