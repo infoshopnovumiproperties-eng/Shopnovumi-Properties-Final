@@ -1,1 +1,27 @@
-<!doctype html><html lang="bn"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Shopnovumi Properties</title></head><body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopnovumi Properties</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      (function () {
+        function hideBayIconCalculator() {
+          document.querySelectorAll('.payment-box').forEach(function (box) {
+            var title = box.querySelector('h3');
+            if (title && title.textContent && title.textContent.indexOf('Bay Icon') !== -1) {
+              box.style.display = 'none';
+            }
+          });
+        }
+        document.addEventListener('DOMContentLoaded', hideBayIconCalculator);
+        var observer = new MutationObserver(hideBayIconCalculator);
+        observer.observe(document.body, { childList: true, subtree: true });
+      })();
+    </script>
+  </body>
+</html>
