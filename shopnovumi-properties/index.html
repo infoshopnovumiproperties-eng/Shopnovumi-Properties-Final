@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopnovumi Properties</title>
+    <script>
+      window.__hideBayIconCalculator = function () {
+        var selectors = ['.payment-box', '[class*="payment"]', '[class*="Payment"]'];
+        selectors.forEach(function (selector) {
+          document.querySelectorAll(selector).forEach(function (box) {
+            var text = box.innerText || box.textContent || '';
+            if (text.indexOf('Bay Icon') !== -1 || text.indexOf('বে আইকন') !== -1 || text.indexOf('ইনভেস্টমেন্ট এস্টিমেটর') !== -1) {
+              box.style.setProperty('display', 'none', 'important');
+              box.style.setProperty('visibility', 'hidden', 'important');
+              box.style.setProperty('height', '0', 'important');
+              box.style.setProperty('margin', '0', 'important');
+              box.style.setProperty('padding', '0', 'important');
+              box.style.setProperty('overflow', 'hidden', 'important');
+            }
+          });
+        });
+      };
+      setInterval(window.__hideBayIconCalculator, 300);
+      document.addEventListener('DOMContentLoaded', window.__hideBayIconCalculator);
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-      (function () {
-        function hideBayIconCalculator() {
-          document.querySelectorAll('.payment-box').forEach(function (box) {
-            var title = box.querySelector('h3');
-            if (title && title.textContent && title.textContent.indexOf('Bay Icon') !== -1) {
-              box.style.display = 'none';
-            }
-          });
-        }
-        document.addEventListener('DOMContentLoaded', hideBayIconCalculator);
-        var observer = new MutationObserver(hideBayIconCalculator);
-        observer.observe(document.body, { childList: true, subtree: true });
-      })();
-    </script>
   </body>
 </html>
