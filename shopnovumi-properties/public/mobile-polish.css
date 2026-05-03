@@ -1,0 +1,77 @@
+@media (max-width: 768px){
+  body{background:#f6faf8;overflow-x:hidden;}
+  header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);}
+  .head-inner{padding:9px 12px;gap:8px;justify-content:space-between;}
+  .brand{gap:8px;min-width:0;}
+  .brand img{width:42px;height:42px;border-radius:10px;flex:0 0 42px;}
+  .brand h1{font-size:18px;line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:210px;}
+  .brand p{font-size:10px;letter-spacing:.4px;line-height:1.2;}
+  nav{display:none!important;}
+  .hotline{display:inline-block;font-size:11px;padding:9px 10px;white-space:nowrap;}
+
+  .hero-inner{display:grid;grid-template-columns:1fr!important;gap:22px;padding:34px 14px 40px;text-align:left;}
+  .pill{font-size:13px;padding:8px 13px;white-space:normal;}
+  .hero h2{font-size:30px!important;line-height:1.28;max-width:100%;margin-top:14px;}
+  .hero-text{font-size:15px;line-height:1.75;margin-bottom:0;}
+  .hero-actions{gap:10px;margin-top:20px;}
+  .hero-actions a{width:100%;text-align:center;padding:13px 16px;font-size:14px;}
+  .slider{border-radius:22px;box-shadow:0 12px 30px #00000018;animation:none;}
+  .slider img{height:235px;}
+  .slider>div{padding:16px;}
+  .slider h3{font-size:21px;line-height:1.25;}
+
+  .projects,.details>div{padding:42px 12px;}
+  .section-title{margin-bottom:22px;}
+  .section-title h3{font-size:28px!important;line-height:1.25;}
+  .section-title span{font-size:14px;line-height:1.65;}
+  .projects-grid{grid-template-columns:1fr!important;padding:12px;border-radius:22px;gap:14px;}
+  .project-card{height:220px;border-radius:18px;}
+  .project-card h3{font-size:22px;margin-bottom:16px;}
+  .project-card button{padding:11px 17px;border-radius:999px;}
+
+  .detail-hero{padding:26px 18px;border-radius:22px;margin-bottom:28px;}
+  .detail-hero h2{font-size:30px!important;line-height:1.25;}
+  .detail-hero h4{font-size:15px;line-height:1.75;}
+  .detail-hero a,.cta a{width:100%;text-align:center;padding:13px 16px;}
+
+  .gallery-section,.map-block,.info-section,.info-card,.steps{padding:18px;border-radius:22px;margin-bottom:26px;}
+  .gallery-grid,.info-grid,.uni-grid,.steps>div,.map-grid,.map-grid.three,.two-cards,.calc-grid{grid-template-columns:1fr!important;gap:14px;}
+  .gallery-img{border-radius:18px;}
+  .big-image img{height:auto;max-height:420px;object-fit:cover;}
+  .map-card{min-height:230px;border-radius:20px;}
+  .map-card img{height:230px;}
+  .map-card b{font-size:13px;padding:7px 12px;}
+  .map-card span{font-size:13px;left:16px;bottom:16px;right:16px;}
+  .info-section h3,.table-title,.info-card h3,.steps h3{font-size:24px;line-height:1.3;}
+  .info-grid p,.uni-grid div,.steps article{padding:14px;border-radius:14px;font-size:14px;}
+
+  .table-wrap{border-radius:16px;margin:0 -2px;}
+  .table-wrap th,.table-wrap td{padding:12px;font-size:13px;}
+  .notes{grid-template-columns:1fr!important;font-size:13px;}
+  .payment-box{padding:18px;border-radius:22px;box-shadow:0 12px 30px #00000012;margin-top:8px;}
+  .payment-box h3{font-size:23px;line-height:1.25;}
+  .payment-box>p{font-size:13px;}
+  .selects{gap:10px;margin:16px 0;}
+  .selects select{padding:12px;border-radius:12px;font-size:13px;}
+  .pay-rows{border-radius:16px;}
+  .pay-rows p{padding:13px 12px;font-size:13px;align-items:center;}
+  .pay-rows b{text-align:right;font-size:13px;}
+
+  .cta{border-radius:22px;padding:26px 16px;margin-top:28px;}
+  .cta h3{font-size:24px;line-height:1.3;}
+  .cta p{font-size:14px;line-height:1.6;}
+  .contact{padding:34px 12px;}
+  .contact>div{grid-template-columns:1fr!important;padding:18px;border-radius:22px;gap:18px;}
+  .contact h2{font-size:28px;line-height:1.3;}
+  .contact-boxes{grid-template-columns:1fr!important;}
+  .contact-card{padding:18px;border-radius:18px;}
+  .contact-card a{padding:13px 14px;font-size:13px;}
+  footer{font-size:12px;padding:18px 12px;}
+}
+
+@media (max-width: 380px){
+  .brand h1{font-size:16px;max-width:170px;}
+  .hotline{font-size:10px;padding:8px 8px;}
+  .hero h2{font-size:27px!important;}
+  .section-title h3{font-size:25px!important;}
+}
