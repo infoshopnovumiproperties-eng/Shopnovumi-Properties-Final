@@ -1,0 +1,1 @@
+.payment-box:has(.selects > select:only-child){display:none!important;visibility:hidden!important;height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;}
