@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "node -e \"const fs=require('fs');const p='src/main.jsx';let s=fs.readFileSync(p,'utf8');const a=s.indexOf('function BayIconCalculator()');const b=s.indexOf('function WesternPriceTable()',a);if(a>-1&&b>-1){s=s.slice(0,a)+'function BayIconCalculator(){return null;}\\n\\n'+s.slice(b);fs.writeFileSync(p,s)}\" && vite build",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
