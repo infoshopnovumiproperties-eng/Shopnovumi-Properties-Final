@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
+import './test.css';
 
 const LOGO_URL='https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png';
 const COMPANY_NAME='Shopnovumi Properties';
