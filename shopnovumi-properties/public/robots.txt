@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shopnovumiproperties.netlify.app/sitemap.xml
