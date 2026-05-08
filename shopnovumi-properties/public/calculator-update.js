@@ -2,7 +2,7 @@ const SN_DOWN_PER_KATHA = 200000;
 const SN_BOOKING_PER_KATHA = 20000;
 
 function snBanglaDigits(value) {
-  const map = {'0':'০','1':'১','2':'۲','3':'۳','4':'۴','5':'۵','6':'۶','7':'۷','8':'۸','9':'۹'};
+  const map = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'۵','6':'۶','7':'۷','8':'۸','9':'۹'};
   return String(value).replace(/[0-9]/g, d => map[d] || d);
 }
 
@@ -12,8 +12,8 @@ function snMoney(value) {
 }
 
 function snNumber(text) {
-  const map = {'۰':'0','۱':'1','۲':'2','۳':'3','۴':'4','۵':'5','۶':'6','۷':'7','۸':'8','۹':'9','০':'0','১':'1','২':'2','۳':'3','۴':'4','৫':'5','۶':'6','۷':'7','۸':'8','۹':'9'};
-  const normalized = String(text || '').replace(/[۰-۹۰-۹]/g, d => map[d] || d).replace(/,/g, '');
+  const map = {'০':'0','১':'1','২':'2','৩':'3','۴':'4','৪':'4','۵':'5','৫':'5','۶':'6','۶':'6','۷':'7','۷':'7','۸':'8','۸':'8','۹':'9','۹':'9'};
+  const normalized = String(text || '').replace(/[۰-۹০-۹]/g, d => map[d] || d).replace(/[০-۹]/g, d => map[d] || d).replace(/,/g, '');
   const match = normalized.match(/[0-9]+(?:\.[0-9]+)?/);
   return match ? Number(match[0]) : 0;
 }
@@ -64,6 +64,7 @@ function snUpdateAllCalculators() {
 }
 
 window.addEventListener('load', snUpdateAllCalculators);
+document.addEventListener('DOMContentLoaded', snUpdateAllCalculators);
 document.addEventListener('change', () => setTimeout(snUpdateAllCalculators, 50), true);
 document.addEventListener('click', () => setTimeout(snUpdateAllCalculators, 50), true);
-setInterval(snUpdateAllCalculators, 700);
+setInterval(snUpdateAllCalculators, 500);
