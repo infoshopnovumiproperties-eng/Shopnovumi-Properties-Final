@@ -1,0 +1,23 @@
+@media (max-width: 768px){
+  .calc-grid{grid-template-columns:1fr!important;gap:16px!important;margin:26px 0!important;}
+  .payment-box{width:100%!important;position:relative!important;top:auto!important;margin:10px 0 28px!important;padding:20px!important;border-radius:24px!important;overflow:hidden!important;background:linear-gradient(180deg,#ffffff,#f7fbf8)!important;border:1px solid #e1e8df!important;box-shadow:0 18px 45px rgba(16,35,29,.13)!important;}
+  .payment-box:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:#0f5f43;}
+  .payment-box h3{font-size:25px!important;line-height:1.25!important;margin:10px 0 8px!important;color:#0f5f43!important;letter-spacing:-.02em!important;}
+  .payment-box>p{font-size:14px!important;line-height:1.55!important;margin:0 0 16px!important;color:#64736b!important;font-weight:800!important;}
+  .selects{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;margin:16px 0 18px!important;}
+  .selects select{width:100%!important;min-height:58px!important;padding:15px 44px 15px 14px!important;border-radius:18px!important;border:1px solid #d7ded5!important;background:#fff!important;color:#10231d!important;font-size:16px!important;font-weight:900!important;box-shadow:0 8px 18px rgba(16,35,29,.05)!important;}
+  .pay-rows{border-radius:20px!important;overflow:hidden!important;background:#fff!important;border:1px solid #edf1ea!important;box-shadow:0 12px 25px rgba(16,35,29,.08)!important;}
+  .pay-rows p{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:14px!important;min-height:58px!important;padding:15px 14px!important;margin:0!important;border-bottom:1px solid #eef2ea!important;font-size:15px!important;}
+  .pay-rows p span{font-weight:800!important;color:#24352f!important;line-height:1.35!important;}
+  .pay-rows b{text-align:right!important;font-size:15px!important;font-weight:900!important;color:#10231d!important;line-height:1.35!important;white-space:nowrap!important;}
+  .pay-rows .last{background:#0f5f43!important;color:#fff!important;}
+  .pay-rows .last span,.pay-rows .last b{color:#fff!important;}
+  footer{padding-bottom:120px!important;}
+}
+@media (max-width:380px){
+  .payment-box{padding:17px!important;border-radius:22px!important;}
+  .payment-box h3{font-size:22px!important;}
+  .selects select{font-size:15px!important;min-height:54px!important;padding:13px 38px 13px 12px!important;}
+  .pay-rows p{font-size:14px!important;padding:13px 12px!important;}
+  .pay-rows b{font-size:14px!important;}
+}
