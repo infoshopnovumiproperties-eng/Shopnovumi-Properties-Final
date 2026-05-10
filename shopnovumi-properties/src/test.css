@@ -1,5 +1,120 @@
 @media(max-width:900px){
   body{padding-bottom:64px!important;}
+
+  /* 1. Hide hotline from mobile top line */
+  nav,.hotline{
+    display:none!important;
+    visibility:hidden!important;
+    width:0!important;
+    height:0!important;
+    padding:0!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+  .head-inner{
+    justify-content:flex-start!important;
+    padding:8px 12px!important;
+    gap:8px!important;
+  }
+  .brand{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    overflow:hidden!important;
+  }
+  .brand h1{
+    max-width:calc(100vw - 90px)!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .brand p{
+    max-width:calc(100vw - 90px)!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  /* 2. Remove big hero top spacing */
+  .hero-inner{
+    padding-top:14px!important;
+    padding-bottom:20px!important;
+    gap:14px!important;
+  }
+  .pill{
+    margin-top:0!important;
+    font-size:12px!important;
+    padding:7px 12px!important;
+  }
+  .hero h2{
+    font-size:24px!important;
+    line-height:1.25!important;
+    margin:10px 0 8px!important;
+  }
+  .hero-text{
+    font-size:13px!important;
+    line-height:1.55!important;
+    margin:0!important;
+  }
+  .hero-actions{
+    margin-top:12px!important;
+    gap:8px!important;
+  }
+  .hero-actions a{
+    padding:11px 14px!important;
+    border-radius:14px!important;
+  }
+  .slider{
+    margin-top:4px!important;
+    border-radius:18px!important;
+  }
+  .slider img{
+    height:160px!important;
+    object-fit:cover!important;
+  }
+  .slider>div{
+    padding:12px!important;
+  }
+
+  /* 3. Make projects visible earlier on mobile */
+  .projects{
+    padding-top:18px!important;
+    padding-bottom:22px!important;
+  }
+  .section-title{
+    margin-bottom:12px!important;
+  }
+  .section-title h3{
+    font-size:22px!important;
+    line-height:1.22!important;
+    margin:4px 0!important;
+  }
+  .section-title p,.section-title span{
+    font-size:12px!important;
+    line-height:1.45!important;
+  }
+  .projects-grid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+    padding:10px!important;
+    border-radius:18px!important;
+  }
+  .project-card{
+    height:150px!important;
+    border-radius:16px!important;
+  }
+  .project-card h3{
+    font-size:15px!important;
+    line-height:1.2!important;
+    margin-bottom:10px!important;
+  }
+  .project-card button{
+    font-size:10px!important;
+    padding:8px 10px!important;
+    border-radius:999px!important;
+  }
+
   footer{padding:10px 12px 64px!important;margin:0!important;min-height:auto!important;}
   .sn-floating{
     left:6px!important;
