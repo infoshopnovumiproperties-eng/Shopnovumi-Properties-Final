@@ -1,19 +1,19 @@
 @media(max-width:900px){
-  body{padding-bottom:72px!important;}
-  footer{padding:12px 12px 72px!important;margin:0!important;min-height:auto!important;}
+  body{padding-bottom:64px!important;}
+  footer{padding:10px 12px 64px!important;margin:0!important;min-height:auto!important;}
   .sn-floating{
-    left:8px!important;
-    right:8px!important;
-    bottom:4px!important;
+    left:6px!important;
+    right:6px!important;
+    bottom:0!important;
     grid-template-columns:1fr 1fr!important;
     gap:6px!important;
     z-index:99999!important;
   }
   .sn-floating a,.sn-floating button{
-    min-height:38px!important;
+    min-height:36px!important;
     font-size:11px!important;
     padding:6px!important;
-    border-radius:14px!important;
-    box-shadow:0 6px 16px rgba(16,35,29,.16)!important;
+    border-radius:14px 14px 0 0!important;
+    box-shadow:0 4px 12px rgba(16,35,29,.14)!important;
   }
 }
