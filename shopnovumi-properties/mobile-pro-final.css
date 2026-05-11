@@ -1,0 +1,90 @@
+/* Final professional mobile polish for Shopnovumi Properties */
+@media (max-width: 768px){
+  :root{--mobile-pad:14px;--mobile-radius:22px;--mobile-shadow:0 14px 34px rgba(2,6,23,.12)}
+  html,body{background:#f8fafc!important;color:#0f172a!important}
+  body{font-size:14px!important;line-height:1.65!important}
+
+  /* Header */
+  header{border-bottom:1px solid rgba(4,120,87,.10)!important;box-shadow:0 8px 24px rgba(2,6,23,.07)!important}
+  .head-inner{padding:8px 14px!important;min-height:56px!important}
+  .brand img{width:40px!important;height:40px!important;border-radius:11px!important;padding:2px!important}
+  .brand h1{font-size:17px!important;color:#047857!important;letter-spacing:-.02em!important}
+  .brand p{font-size:9.5px!important;letter-spacing:.2px!important;color:#1e40af!important}
+
+  /* General section rhythm */
+  section,.projects,.details>div,.sn-reviews{scroll-margin-top:72px!important}
+  .projects,.details>div{padding-left:var(--mobile-pad)!important;padding-right:var(--mobile-pad)!important}
+  .section-title{text-align:left!important;margin-bottom:12px!important}
+  .section-title p{font-size:10.5px!important;letter-spacing:.08em!important;color:#047857!important}
+  .section-title h3{font-size:22px!important;line-height:1.25!important;letter-spacing:-.025em!important}
+  .section-title span{font-size:13px!important;line-height:1.6!important;margin-top:6px!important;color:#64748b!important}
+
+  /* Premium cards */
+  .slider,.projects-grid,.gallery-section,.map-block,.info-section,.info-card,.steps,.payment-box,.contact>div,.sn-reviews-wrap{
+    border-radius:var(--mobile-radius)!important;
+    box-shadow:var(--mobile-shadow)!important;
+    border:1px solid rgba(15,23,42,.07)!important;
+  }
+  .gallery-section,.map-block,.info-section,.info-card,.steps{padding:16px!important;margin:14px 0!important;background:rgba(255,255,255,.92)!important}
+
+  /* Hero and automatic project preview */
+  .hero{background:linear-gradient(180deg,#ecfdf5 0%,#ffffff 78%)!important}
+  .pill{box-shadow:0 8px 20px rgba(4,120,87,.08)!important}
+  .hero h2{max-width:100%!important;font-weight:900!important;color:#0f172a!important}
+  .hero-text{color:#475569!important}
+  .hero-actions a{min-height:48px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+  .slider{background:#fff!important;overflow:hidden!important}
+  .slider img{width:100%!important;object-fit:cover!important;filter:saturate(1.04) contrast(1.02)!important}
+  .slider>div{background:#fff!important}
+
+  /* Project grid */
+  .projects-grid{background:#fff!important;padding:8px!important}
+  .project-card{box-shadow:0 12px 26px rgba(2,6,23,.14)!important;border:1px solid rgba(255,255,255,.75)!important}
+  .project-card img{filter:saturate(1.03) contrast(1.02)!important}
+  .project-card h3{font-weight:900!important;text-shadow:0 4px 14px rgba(0,0,0,.35)!important}
+  .project-card button{background:#fff!important;color:#047857!important;font-weight:900!important;box-shadow:0 8px 20px rgba(0,0,0,.18)!important}
+
+  /* Gallery */
+  .gallery-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important}
+  .gallery-img{border-radius:16px!important;background:#fff!important;box-shadow:0 8px 18px rgba(2,6,23,.08)!important}
+  .gallery-img img{height:150px!important;width:100%!important;object-fit:cover!important}
+  .big-image{border-radius:18px!important}
+  .big-image img{max-height:320px!important;object-fit:cover!important}
+
+  /* Info/amenity boxes */
+  .info-grid,.uni-grid,.steps>div{grid-template-columns:1fr!important;gap:8px!important}
+  .info-grid p,.uni-grid div,.steps article{background:#f8fafc!important;border-radius:14px!important;padding:11px 12px!important;font-size:13px!important;line-height:1.55!important;box-shadow:none!important}
+  .info-section h3,.info-card h3,.steps h3{font-size:20px!important;line-height:1.25!important;margin-bottom:12px!important}
+  .info-card p{font-size:13px!important;line-height:1.65!important}
+
+  /* Map */
+  .map-grid,.map-grid.three,.map-grid.one{grid-template-columns:1fr!important;gap:10px!important}
+  .map-card{border-radius:18px!important;min-height:220px!important}
+  .map-card img{height:240px!important;object-fit:contain!important;background:#f8fafc!important}
+  .map-card b{font-size:12px!important;padding:7px 12px!important;top:12px!important;left:12px!important}
+  .map-card span{font-size:12px!important;left:14px!important;bottom:14px!important}
+
+  /* CTA */
+  .cta{border-radius:22px!important;padding:18px 14px!important;margin:16px 0!important;box-shadow:var(--mobile-shadow)!important}
+  .cta h3{font-size:21px!important;line-height:1.25!important}
+  .cta p{font-size:13px!important;line-height:1.6!important}
+  .cta a{min-height:46px!important;font-size:13px!important;border-radius:14px!important;padding:12px 14px!important}
+
+  /* Tables/calculator final tune */
+  .table-wrap{border-radius:16px!important}
+  .payment-box{border-radius:20px!important}
+  .pay-rows p:nth-child(even){background:#f8fafc!important}
+  .pay-rows .last{background:linear-gradient(90deg,#047857,#065f46)!important}
+
+  /* Contact/footer */
+  .contact{background:linear-gradient(180deg,#07111f,#020617)!important}
+  footer{background:#020617!important;color:#e2e8f0!important;font-size:12.5px!important;line-height:1.5!important}
+}
+
+@media (max-width: 390px){
+  .gallery-grid{grid-template-columns:1fr!important}
+  .gallery-img img{height:185px!important}
+  .section-title h3{font-size:21px!important}
+  .slider img{height:174px!important}
+  .brand h1{font-size:16px!important}
+}
