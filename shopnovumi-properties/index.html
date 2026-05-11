@@ -11,11 +11,9 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-
 fbq('init', '2901690233516292');
 fbq('track', 'PageView');
 </script>
-<!-- End Meta Pixel Code -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopnovumi Properties</title>
@@ -24,55 +22,17 @@ fbq('track', 'PageView');
     <link rel="stylesheet" href="/mobile-project-flow.css">
     <link rel="stylesheet" href="/contact-mobile-standard.css">
     <link rel="stylesheet" href="/mobile-pro-final.css">
+    <link rel="stylesheet" href="/calculator-visibility-fix.css">
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" />
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" />
-    <link rel="apple-touch-icon" href="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" />
-    <meta property="og:title" content="Shopnovumi Properties" />
-    <meta property="og:image" content="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" />
     <style>
-      .payment-box:has(.selects > select:only-child) {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-      }
+      .payment-box:has(.selects > select:only-child){display:none!important;visibility:hidden!important;height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
     </style>
   </head>
   <body>
-    <noscript>
-      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2901690233516292&ev=PageView&noscript=1" />
-    </noscript>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2901690233516292&ev=PageView&noscript=1" /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script src="/footer-english.js"></script>
     <script src="/calculator-update.js"></script>
-    <script>
-      document.addEventListener('click', function (event) {
-        var whatsappLink = event.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
-        if (whatsappLink && window.fbq) {
-          window.fbq('track', 'Contact');
-        }
-      });
-
-      /* Scroll directly to project gallery on mobile */
-      document.addEventListener('click', function(event){
-        const btn = event.target.closest('.project-card button');
-        if(!btn) return;
-
-        setTimeout(function(){
-          const galleries = document.querySelectorAll('.gallery-section');
-          if(galleries && galleries.length){
-            const visibleGallery = Array.from(galleries).find(function(el){
-              return el.offsetParent !== null;
-            });
-            if(visibleGallery){
-              visibleGallery.scrollIntoView({behavior:'smooth', block:'start'});
-            }
-          }
-        }, 350);
-      });
-    </script>
   </body>
 </html>
