@@ -1,0 +1,163 @@
+/* Calculator & Bottom Mobile Fix for Shopnovumi Properties */
+@media (max-width: 768px){
+  html,body,#root{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+  *{max-width:100%;box-sizing:border-box}
+
+  /* Keep every detail/project area inside phone screen */
+  .details,.details>div,.projects,.contact,.sn-reviews{width:100%!important;max-width:100%!important;overflow:hidden!important}
+  .details>div{padding:36px 12px!important}
+
+  /* Main calculator layout: table first, estimate box below, both full width */
+  .calc-grid{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:18px!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin:22px 0!important;
+    overflow:visible!important;
+  }
+  .calc-grid>*{width:100%!important;max-width:100%!important;min-width:0!important}
+
+  /* Price table readable on phone */
+  .table-title{
+    font-size:21px!important;
+    line-height:1.35!important;
+    margin:0 0 12px!important;
+    text-align:left!important;
+    color:#064e3b!important;
+  }
+  .table-wrap{
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:auto!important;
+    -webkit-overflow-scrolling:touch!important;
+    border-radius:18px!important;
+    background:#fff!important;
+    box-shadow:0 10px 24px rgba(2,6,23,.10)!important;
+  }
+  .table-wrap table{
+    width:max-content!important;
+    min-width:560px!important;
+    border-collapse:collapse!important;
+  }
+  .table-wrap th,.table-wrap td{
+    padding:11px 10px!important;
+    font-size:12.5px!important;
+    line-height:1.45!important;
+    white-space:nowrap!important;
+  }
+  .table-wrap th{position:sticky;top:0;background:#047857!important;color:#fff!important;z-index:1!important}
+  .notes{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;margin-top:12px!important}
+  .notes p{margin:0!important;padding:10px 12px!important;border-radius:14px!important;background:#f8fafc!important;font-size:12.8px!important;line-height:1.6!important;color:#334155!important}
+
+  /* Calculator estimate card */
+  .payment-box{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    position:relative!important;
+    top:auto!important;
+    padding:16px!important;
+    margin:0!important;
+    border-radius:22px!important;
+    background:linear-gradient(145deg,#ffffff,#ecfdf5 75%,#fff7ed)!important;
+    border:1px solid rgba(4,120,87,.18)!important;
+    box-shadow:0 16px 36px rgba(2,6,23,.14)!important;
+    overflow:hidden!important;
+  }
+  .payment-box h3{
+    font-size:22px!important;
+    line-height:1.25!important;
+    margin:0 0 6px!important;
+    color:#064e3b!important;
+  }
+  .payment-box>p{
+    font-size:12.8px!important;
+    line-height:1.55!important;
+    margin:0 0 12px!important;
+    color:#64748b!important;
+  }
+  .selects{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    width:100%!important;
+    margin:12px 0!important;
+  }
+  .selects select{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    height:48px!important;
+    padding:0 42px 0 12px!important;
+    border-radius:14px!important;
+    border:1px solid #cbd5e1!important;
+    background-color:#fff!important;
+    color:#0f172a!important;
+    font-size:13.5px!important;
+    line-height:1.2!important;
+    font-weight:800!important;
+    outline:none!important;
+    appearance:auto!important;
+    -webkit-appearance:menulist!important;
+  }
+  .selects select:focus{border-color:#047857!important;box-shadow:0 0 0 4px rgba(4,120,87,.12)!important}
+
+  /* Calculation rows: label and amount clearly visible */
+  .pay-rows{
+    width:100%!important;
+    max-width:100%!important;
+    border-radius:18px!important;
+    overflow:hidden!important;
+    background:#fff!important;
+    box-shadow:0 8px 18px rgba(2,6,23,.08)!important;
+  }
+  .pay-rows p{
+    display:grid!important;
+    grid-template-columns:minmax(96px,44%) minmax(0,1fr)!important;
+    align-items:center!important;
+    gap:8px!important;
+    width:100%!important;
+    margin:0!important;
+    padding:12px!important;
+    border-bottom:1px solid #eef2f7!important;
+  }
+  .pay-rows span{
+    min-width:0!important;
+    font-size:12.6px!important;
+    line-height:1.35!important;
+    color:#475569!important;
+    font-weight:800!important;
+  }
+  .pay-rows b{
+    min-width:0!important;
+    display:block!important;
+    text-align:right!important;
+    font-size:13.6px!important;
+    line-height:1.35!important;
+    color:#0f172a!important;
+    white-space:normal!important;
+    word-break:break-word!important;
+    overflow-wrap:anywhere!important;
+  }
+  .pay-rows .last{background:linear-gradient(90deg,#047857,#064e3b)!important;color:#fff!important}
+  .pay-rows .last span,.pay-rows .last b{color:#fff!important}
+  .pay-rows .last b{font-size:15px!important;font-weight:900!important}
+
+  /* Bottom/contact should not hide behind floating buttons */
+  .contact{padding-bottom:132px!important}
+  footer{padding:22px 12px 118px!important}
+  .sn-floating{z-index:99999!important}
+}
+
+@media (max-width: 380px){
+  .payment-box{padding:14px!important;border-radius:20px!important}
+  .payment-box h3{font-size:20px!important}
+  .selects select{font-size:12.8px!important;height:46px!important}
+  .pay-rows p{grid-template-columns:minmax(88px,42%) minmax(0,1fr)!important;padding:10px!important}
+  .pay-rows span{font-size:12px!important}
+  .pay-rows b{font-size:12.8px!important}
+  .table-wrap table{min-width:520px!important}
+}
