@@ -21,6 +21,7 @@ fbq('track', 'PageView');
     <title>Shopnovumi Properties</title>
     <link rel="stylesheet" href="/mobile-polish.css">
     <link rel="stylesheet" href="/calculator-mobile-fix.css">
+    <link rel="stylesheet" href="/mobile-project-flow.css">
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" />
     <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" />
     <link rel="apple-touch-icon" href="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" />
@@ -51,6 +52,24 @@ fbq('track', 'PageView');
         if (whatsappLink && window.fbq) {
           window.fbq('track', 'Contact');
         }
+      });
+
+      /* Scroll directly to project gallery on mobile */
+      document.addEventListener('click', function(event){
+        const btn = event.target.closest('.project-card button');
+        if(!btn) return;
+
+        setTimeout(function(){
+          const galleries = document.querySelectorAll('.gallery-section');
+          if(galleries && galleries.length){
+            const visibleGallery = Array.from(galleries).find(function(el){
+              return el.offsetParent !== null;
+            });
+            if(visibleGallery){
+              visibleGallery.scrollIntoView({behavior:'smooth', block:'start'});
+            }
+          }
+        }, 350);
       });
     </script>
   </body>
