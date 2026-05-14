@@ -26,6 +26,7 @@ fbq('track', 'PageView');
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/2S9NC5p0/Shopnovumi-Properties-Logo.png" />
     <style>
       .payment-box:has(.selects > select:only-child){display:none!important;visibility:hidden!important;height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+      .slider{cursor:pointer}
     </style>
   </head>
   <body>
@@ -35,5 +36,38 @@ fbq('track', 'PageView');
     <script src="/footer-english.js"></script>
     <script src="/calculator-update.js"></script>
     <script src="/project-gallery-click.js"></script>
+    <script>
+      (function(){
+        function clean(v){return String(v||'').replace(/\s+/g,' ').trim();}
+        function scrollGallery(){
+          setTimeout(function(){
+            var galleries=Array.prototype.slice.call(document.querySelectorAll('.gallery-section'));
+            var visible=galleries.find(function(el){return el.offsetParent!==null && el.getBoundingClientRect().height>60;});
+            if(visible){visible.scrollIntoView({behavior:'smooth',block:'start'});}
+          },700);
+        }
+        function openByTitle(title){
+          title=clean(title);
+          if(!title)return;
+          var cards=Array.prototype.slice.call(document.querySelectorAll('.project-card'));
+          var card=cards.find(function(c){
+            var t=clean((c.querySelector('h3')||{}).textContent);
+            return t===title || t.indexOf(title)>-1 || title.indexOf(t)>-1;
+          });
+          if(card){
+            var btn=card.querySelector('button');
+            if(btn){btn.click();}
+            scrollGallery();
+          }
+        }
+        document.addEventListener('click',function(e){
+          var slider=e.target.closest('.slider');
+          if(slider && !e.target.closest('.slide-actions')){
+            openByTitle((slider.querySelector('h3')||{}).textContent);
+          }
+          if(e.target.closest('.project-card button')){scrollGallery();}
+        },true);
+      })();
+    </script>
   </body>
 </html>
