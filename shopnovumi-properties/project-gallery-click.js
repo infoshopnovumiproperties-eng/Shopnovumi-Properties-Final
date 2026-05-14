@@ -1,77 +1,40 @@
-// Robust click system: homepage animated project slider -> exact project gallery
+// Guaranteed visible slider click behavior
 (function(){
-  function txt(v){return String(v||'').replace(/\s+/g,' ').trim();}
-  function normUrl(v){return String(v||'').split('?')[0].trim();}
-
-  function getVisibleGallery(){
-    var galleries=[].slice.call(document.querySelectorAll('.gallery-section'));
-    return galleries.find(function(el){
-      var r=el.getBoundingClientRect();
-      return el.offsetParent!==null && r.height>60 && r.width>100;
-    });
+  function clean(v){return String(v||'').replace(/\s+/g,' ').trim();}
+  function makeGallery(title,img){
+    if(!title && !img) return;
+    var old=document.getElementById('sn-slider-gallery');
+    if(old) old.remove();
+    var s=document.createElement('section');
+    s.id='sn-slider-gallery';
+    s.className='gallery-section';
+    s.style.margin='18px auto';
+    s.style.maxWidth='1280px';
+    s.innerHTML='<div class="section-title"><p>Project Gallery</p><h3>'+title+'</h3></div><div class="gallery-grid"><div class="gallery-img"><img src="'+img+'" alt="'+title+'"></div></div>';
+    var hero=document.querySelector('.hero');
+    if(hero && hero.parentNode){hero.parentNode.insertBefore(s,hero.nextSibling);}else{document.body.appendChild(s);}
+    setTimeout(function(){s.scrollIntoView({behavior:'smooth',block:'start'});},80);
   }
-
-  function scrollGalleryRetry(count){
-    count=count||0;
-    var gallery=getVisibleGallery();
-    if(gallery){
-      gallery.scrollIntoView({behavior:'smooth',block:'start'});
-      return;
-    }
-    if(count<8){setTimeout(function(){scrollGalleryRetry(count+1);},250);}
-  }
-
-  function findMatchingCard(slider){
-    var title=txt((slider.querySelector('h3')||{}).textContent);
-    var img=slider.querySelector('img');
-    var src=normUrl(img && img.getAttribute('src'));
+  function tryOpenOriginal(title,img){
     var cards=[].slice.call(document.querySelectorAll('.project-card'));
-
-    var byTitle=cards.find(function(card){
-      var cardTitle=txt((card.querySelector('h3')||{}).textContent);
-      return cardTitle && title && (cardTitle===title || cardTitle.indexOf(title)>-1 || title.indexOf(cardTitle)>-1);
+    var card=cards.find(function(c){
+      var t=clean((c.querySelector('h3')||{}).textContent);
+      var ci=(c.querySelector('img')||{}).src||'';
+      return (title && (t===title || t.indexOf(title)>-1 || title.indexOf(t)>-1)) || (img && ci && ci.indexOf(img.split('/').pop())>-1);
     });
-    if(byTitle)return byTitle;
-
-    var byImg=cards.find(function(card){
-      var cardImg=card.querySelector('img');
-      var cardSrc=normUrl(cardImg && cardImg.getAttribute('src'));
-      return src && cardSrc && (src===cardSrc || cardSrc.indexOf(src)>-1 || src.indexOf(cardSrc)>-1);
-    });
-    return byImg||null;
+    if(card){
+      var btn=card.querySelector('button');
+      if(btn && clean(btn.textContent).indexOf('বন্ধ')===-1) btn.click();
+    }
   }
-
-  function openCardThenGallery(card){
-    if(!card)return;
-    var btn=card.querySelector('button');
-    var btnText=txt(btn && btn.textContent);
-    if(btn && btnText.indexOf('বন্ধ')===-1){btn.click();}
-    scrollGalleryRetry(0);
-  }
-
   document.addEventListener('click',function(e){
     var slider=e.target.closest('.slider');
-    if(slider){
-      e.preventDefault();
-      e.stopPropagation();
-      openCardThenGallery(findMatchingCard(slider));
-      return false;
-    }
-    var card=e.target.closest('.project-card');
-    if(card){
-      setTimeout(function(){scrollGalleryRetry(0);},150);
-    }
-  },true);
-
-  document.addEventListener('touchend',function(e){
-    var slider=e.target.closest('.slider');
-    if(slider){
-      openCardThenGallery(findMatchingCard(slider));
-    }
-  },true);
-
-  document.addEventListener('mouseover',function(e){
-    var slider=e.target.closest('.slider');
-    if(slider){slider.style.cursor='pointer';}
+    if(!slider || e.target.closest('.slide-actions')) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var title=clean((slider.querySelector('h3')||{}).textContent);
+    var img=(slider.querySelector('img')||{}).src||'';
+    tryOpenOriginal(title,img);
+    makeGallery(title,img);
   },true);
 })();
